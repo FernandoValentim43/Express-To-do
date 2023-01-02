@@ -5,5 +5,8 @@ POST http://localhost:3000/todo/new
 Content-Type: application/json
 
 {
-    "text": "Study typescript"
+    "text": "buy pizza"
 }
+
+###
+DELETE http://localhost:3000/todo/delete/63b3185cca887a3da0f2c327
