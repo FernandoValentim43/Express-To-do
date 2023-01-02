@@ -23,6 +23,22 @@ mongoose
 //app setup
 app.listen(process.env.PORT, () => console.log(`Server running on port ${process.env.PORT} - http://localhost:${process.env.PORT}`))
 
+//
+const Todo = require("./models/Todo");
+app.get("/todos", async (req, res) => {
+  const todos = await Todo.find();
+
+  res.json(todos);
+})
+
+app.post("/todo/new", (req, res) => {
+  const todo = new Todo({
+    text: req.body.text
+  })
+
+  todo.save();
+  res.json(todo);
+})
 
 
 
