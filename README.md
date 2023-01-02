@@ -1,5 +1,5 @@
 # Express-To-do
-Simple to-do list with Express
+### Simple to-do list with Express
 
 ## Backend:
 - ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
@@ -8,8 +8,8 @@ Simple to-do list with Express
 
 | Other technologies        | Description | 
 | :---                      |    :----:   |  
-| Mongoose                 | MongoDB and the Node object modeling  for node   | 
-| Nodemon                 | Monitor script    | 
+| Mongoose                  | MongoDB and the Node object modeling  for node   | 
+| Nodemon                   | Monitor script    | 
 
 
 ### Setup
