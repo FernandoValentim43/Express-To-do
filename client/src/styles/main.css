@@ -1,3 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.background-image {
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 20rem;
+}
