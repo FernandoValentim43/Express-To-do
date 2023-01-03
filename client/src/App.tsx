@@ -2,10 +2,8 @@ import "./styles/main.css";
 
 function App() {
   return (
-    <div className="">
-      <div className="background-image">
-
-      </div>
+    <div className="flex-container">
+      <div className="main"></div>
     </div>
   );
 }

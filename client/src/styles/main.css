@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
-.background-image {
-    background-color: #1a2c57;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 20rem;
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(8, 51, 94);
+}
+
+.main {
+    background-color: rgba(11, 28, 48, 0.356);
+    height: 45rem;
+    width: 45rem;
 }
