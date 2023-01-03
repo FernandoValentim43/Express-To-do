@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 .background-image {
+    background-color: #1a2c57;
     background-repeat: no-repeat;
     width: 100vw;
     height: 20rem;
