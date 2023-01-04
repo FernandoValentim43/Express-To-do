@@ -3,16 +3,19 @@
 @tailwind utilities;
 
 
-.flex-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: rgb(8, 51, 94);
+#title {
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 300;
 }
 
-.main {
-    background-color: rgba(11, 28, 48, 0.356);
-    height: 45rem;
-    width: 45rem;
+.todo {
+    position: relative;
+    background-color: #08335e;
+    padding: 16px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 16px;
 }
