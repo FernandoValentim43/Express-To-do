@@ -12,22 +12,20 @@ function App({ title }: AppProps) {
   const [popupActive, setPopupActive] = useState(false);
   const [newTodo, setNewTodo] = useState("");
 
+  //fetch the API data
+  const GetTodos = () => {
+    fetch(API + "/todos")
+      .then((res) => res.json())
+      .then((data) => setTodos(data))
+      .catch((err) => console.log("Error:", err));
+  };
+
   useEffect(() => {
     GetTodos();
 
-    console.log(todos)
-  }, [])
+    todos.map((todo) => console.log(todo));
+  }, []);
 
-  const GetTodos = () => {
-    fetch(API + "/todos")
-    .then(res => res.json())
-    .then(data => setTodos(data))
-    .catch(err => console.log("Error:", err));
-  }
-
-
-
-  
   return (
     <div
       id="flex-container"
@@ -37,16 +35,13 @@ function App({ title }: AppProps) {
         <h1 id="title">{title}</h1>
         <p>your tasks:</p>
 
-        <div className="todo">
-          <div className="checkbox"></div>
-          <div className="text">here comes the text</div>
-          <div className="delete-todo">x</div>
-        </div>
+        <div className="todos">
+          <div className="todo">
+            <div className="checkbox"></div>
 
-        <div className="todo complete">
-          <div className="checkbox"></div>
-          <div className="text">here comes the text</div>
-          <div className="delete-todo">x</div>
+            <div className="text"></div>
+            <div className="delete-todo">x</div>
+          </div>
         </div>
       </div>
     </div>
