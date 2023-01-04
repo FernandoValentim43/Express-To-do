@@ -5,7 +5,7 @@ POST http://localhost:3000/todo/new
 Content-Type: application/json
 
 {
-    "text": "get bread 🍞 "
+    "text": "get 2 bread 🍞 "
 }
 
 ###
