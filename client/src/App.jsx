@@ -3,14 +3,8 @@ import { useState, useEffect } from "react";
 
 const API = "http://localhost:3000";
 
-interface AppProps {
-  title: string;
-}
-
-function App({ title }: AppProps) {
-  const [todos, setTodos] = useState([]);
-  const [popupActive, setPopupActive] = useState(false);
-  const [newTodo, setNewTodo] = useState("");
+function App() {
+  const [todos, setTodos] = useState();
 
   //fetch the API data
   const GetTodos = () => {
@@ -23,16 +17,13 @@ function App({ title }: AppProps) {
   useEffect(() => {
     GetTodos();
 
-    todos.map((todo) => console.log(todo));
+    console.log(todos);
   }, []);
 
   return (
-    <div
-      id="flex-container"
-      className="flex justify-center items-center h-screen bg-[#08335e]"
-    >
-      <div id="main" className="bg-[#185592] h-3/4 w-2/5 rounded">
-        <h1 id="title">{title}</h1>
+    <div id="container" className="bg-red">
+      <div id="main">
+        <h1 id="title">Title</h1>
         <p>your tasks:</p>
 
         <div className="todos">
