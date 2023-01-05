@@ -12,13 +12,13 @@ function App() {
 
   useEffect(() => {
     getTodos();
-    console.log(todos);
+    todos.map((todo) => console.log(todo))
   }, []);
 
   return (
     <div className="todos">
       {todos.map((todo) => (
-        <div className="todo ">
+        <div className={"todo " + (todo.complete ? "complete" : "")} key={todo._id}>
           <div className="checkbox "></div>
           <div className="text">{todo.text}</div>
           <div className="delete-todo">X</div>
