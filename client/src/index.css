@@ -10,6 +10,7 @@
 }
 
 .todo {
+
     position: relative;
     background-color: #08335e;
     padding: 16px;
@@ -17,7 +18,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
 }
 
 .todo .checkbox {
