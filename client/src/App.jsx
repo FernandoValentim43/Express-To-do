@@ -17,11 +17,13 @@ function App() {
 
   return (
     <div className="todos">
-      <div className="todo">
-        <div className="text"></div>
-        <div className="checkbox"></div>
-        <div className="delete-todo">X</div>
-      </div>
+      {todos.map((todo) => (
+        <div className="todo ">
+          <div className="checkbox "></div>
+          <div className="text">{todo.text}</div>
+          <div className="delete-todo">X</div>
+        </div>
+      ))}
     </div>
   );
 }

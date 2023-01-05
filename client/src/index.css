@@ -3,6 +3,15 @@
 @tailwind utilities;
 
 
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 #title {
     font-family: 'Roboto', sans-serif;
     color: white;
@@ -10,7 +19,7 @@
 }
 
 .todo {
-
+    width: 30rem;
     position: relative;
     background-color: #08335e;
     padding: 16px;
