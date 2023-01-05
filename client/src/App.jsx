@@ -17,9 +17,11 @@ function App() {
 
   return (
     <div className="todos">
-      {todos.map((todo) => (
-        <div className="todo">{todo.text}</div>
-      ))}
+      <div className="todo">
+        <div className="text"></div>
+        <div className="checkbox"></div>
+        <div className="delete-todo">X</div>
+      </div>
     </div>
   );
 }
