@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Todo } from "./components/todo";
 
 function App() {
   const API = "http://localhost:3000";
@@ -44,23 +45,9 @@ function App() {
   };
 
   return (
-    <div className="todos">
-      {todos.map((todo) => (
-        <div
-          className={"todo " + (todo.complete ? "complete" : "")}
-          key={todo._id}
-        >
-          <div
-            className="checkbox"
-            onClick={() => completeTodo(todo._id)}
-          ></div>
-          <div className="text">{todo.text}</div>
-          <div className="delete-todo" onClick={() => deleteTodo(todo._id)}>
-            X
-          </div>
-        </div>
-      ))}
-    </div>
+   <section className="main-container">
+
+   </section>
   );
 }
 export default App;
