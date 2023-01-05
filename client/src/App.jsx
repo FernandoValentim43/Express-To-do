@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-   <section className="main-container">
+   <section className="background-image">
 
    </section>
   );
