@@ -45,9 +45,14 @@ function App() {
   };
 
   return (
-   <section id="background-image" className="bg-cover w-screen h-56 bg-no-repeat bg-[url('/index.png')] ">
+   <section id="background-image" className="bg-cover w-screen h-56  bg-no-repeat bg-[url('/index.png')] ">
     <div id="main-container" className="justify-center items-center flex h-screen w-screen">
-      <div id="main"></div>
+      <div id="main">
+        <h1 id="title" className="p-4 text-5xl tracking-[0.8rem] font-medium">TODO</h1>
+
+        
+
+      </div>
     </div>
    </section>
   );
