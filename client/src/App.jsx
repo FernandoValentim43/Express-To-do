@@ -16,7 +16,7 @@ function App() {
   //
   useEffect(() => {
     getTodos();
-    //todos.map((todo) => console.log(todo))
+    todos.map((todo) => console.log(todo));
   }, []);
 
   //complete the todo
@@ -54,13 +54,16 @@ function App() {
         className="justify-center items-center flex h-screen w-screen"
       >
         <div id="main">
-          <h1 id="title" className="p-4 text-5xl tracking-[0.8rem] font-medium">
+          <h1
+            id="title"
+            className="p-4 text-white text-5xl tracking-[0.8rem] font-medium"
+          >
             TODO
           </h1>
 
           <div className="todos">
             {todos.map((todo) => (
-              <Todo />
+              <Todo text={todo.text} key={todo._id}/>
             ))}
           </div>
         </div>
