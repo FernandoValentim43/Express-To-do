@@ -16,7 +16,7 @@ function App() {
   //
   useEffect(() => {
     getTodos();
-    todos.map((todo) => console.log(todo));
+    console.log(todos)
   }, []);
 
   //complete the todo

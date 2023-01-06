@@ -5,11 +5,11 @@ POST http://localhost:3000/todo/new
 Content-Type: application/json
 
 {
-    "text": "get  🥗 "
+    "text": "buy bread 🍞 "
 }
 
 ###
-DELETE http://localhost:3000/todo/delete/63b73703a6adf32872c9aa8d
+DELETE http://localhost:3000/todo/delete/63b8945a92f5a657841f20e1
 
 ###
-GET http://localhost:3000/todo/complete/63b73702a6adf32872c9aa89
+GET http://localhost:3000/todo/complete/63b73703a6adf32872c9aa8d
