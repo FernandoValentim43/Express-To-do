@@ -27,29 +27,19 @@ body {
 
 
 
-/* .todos {
-    height: 100%;
-    width: 30rem;
-    background-color: pink;
+.todo:first-child {
+    border-radius: 0.2rem 0.2rem 0 0;
 }
 
-
-#title {
-    font-family: 'Roboto', sans-serif;
-    color: white;
-    font-weight: 300;
-}
 
 .todo {
-
     position: relative;
     background-color: #08335e;
     padding: 16px;
-    border-radius: 16px;
     display: flex;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 20px;
+    border-bottom: 1px solid white;
 }
 
 .todo .checkbox {
@@ -57,11 +47,11 @@ body {
     height: 20px;
     margin-right: 16px;
     border-radius: 999px;
-    background-color: white;
+    border: 1px solid white;
 }
 
 .todo.complete .checkbox {
-    background-color: black;
+    background-color: white;
 }
 
 .todo.complete .text {
@@ -83,4 +73,4 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-} */
+}
