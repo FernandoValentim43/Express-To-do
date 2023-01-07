@@ -47,7 +47,7 @@ function App() {
   return (
     <section
       id="background-image"
-      className="bg-cover w-screen h-56  bg-no-repeat bg-[url('/index.png')] "
+      className="bg-cover w-screen h-56 bg-no-repeat bg-[url('/index.png')] "
     >
       <div
         id="main-container"
