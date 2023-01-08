@@ -16,7 +16,7 @@ function App() {
   //
   useEffect(() => {
     getTodos();
-    console.log(todos)
+    console.log(todos);
   }, []);
 
   //complete the todo
@@ -63,7 +63,13 @@ function App() {
 
           <div className="todos">
             {todos.map((todo) => (
-              <Todo text={todo.text} key={todo._id}/>
+              /*  <Todo  text={todo.text} key={todo._id}/> */
+
+              <div className={"todo"}  onClick={() => deleteTodo(todo._id)} >
+                <div className="checkbox"></div>
+                <div>{todo.text}</div>
+                <div className="delete-todo">X</div>
+              </div>
             ))}
           </div>
         </div>
