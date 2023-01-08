@@ -63,13 +63,7 @@ function App() {
 
           <div className="todos">
             {todos.map((todo) => (
-              /*  <Todo  text={todo.text} key={todo._id}/> */
-
-              <div className={"todo"}  onClick={() => deleteTodo(todo._id)} >
-                <div className="checkbox"></div>
-                <div>{todo.text}</div>
-                <div className="delete-todo">X</div>
-              </div>
+              <Todo idProp={todo._id} text={todo.text} key={todo._id} deleteTodo={deleteTodo} />
             ))}
           </div>
         </div>
