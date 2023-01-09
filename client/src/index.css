@@ -23,6 +23,7 @@ body {
     /* background-color: #091e35; */
     /* border: 1px solid red; */
     border-radius: 0.5rem;
+    background-color: red;
 }
 
 
@@ -33,6 +34,7 @@ body {
 
 
 .todo {
+    background-color: red;
     color: #8da5bd;
     font-weight: 500;
     text-transform: capitalize;
