@@ -51,7 +51,7 @@ body {
 
 
 .todo {
-
+    transition: 0.3s ease-in-out;
     color: #8da5bd;
     font-weight: 500;
     text-transform: capitalize;
@@ -110,6 +110,7 @@ body {
 }
 
 .complete {
+    transition: 0.3s ease-in-out;
     background-color: #0e2841;
     color: #546372;
 }
