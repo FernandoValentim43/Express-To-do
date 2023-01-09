@@ -54,16 +54,28 @@ function App() {
         className="justify-center items-center flex h-screen w-screen"
       >
         <div id="main">
-          <h1
-            id="title"
-            className="p-4 text-white text-5xl tracking-[0.8rem] font-medium"
-          >
-            TODO
-          </h1>
+          <div className="header">
+            <h1
+              id="title"
+              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16 "
+            >
+              TODO
+            </h1>
+
+            <div className="middle">
+              <div className="checkbox"></div>
+            </div>
+          </div>
+
 
           <div className="todos">
             {todos.map((todo) => (
-              <Todo idProp={todo._id} text={todo.text} key={todo._id} deleteTodo={deleteTodo} />
+              <Todo
+                idProp={todo._id}
+                text={todo.text}
+                key={todo._id}
+                deleteTodo={deleteTodo}
+              />
             ))}
           </div>
         </div>
