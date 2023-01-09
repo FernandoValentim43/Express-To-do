@@ -57,7 +57,7 @@ function App() {
           <div className="header">
             <h1
               id="title"
-              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16 "
+              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
             >
               TODO
             </h1>
@@ -67,15 +67,19 @@ function App() {
             </div>
           </div>
 
-
           <div className="todos">
             {todos.map((todo) => (
-              <Todo
-                idProp={todo._id}
-                text={todo.text}
+              <div
+                className={"todo " + (todo.complete ? "complete" : "")}
                 key={todo._id}
-                deleteTodo={deleteTodo}
-              />
+              >
+                <div
+                  className="checkbox"
+                  onClick={() => completeTodo(todo._id)}
+                ></div>
+                <div className="text">{todo.text}</div>
+                <div className="delete-todo">X</div>
+              </div>
             ))}
           </div>
         </div>
