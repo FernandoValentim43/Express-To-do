@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Todo } from "./components/todo";
-import DialogDemo from "./components/Dialog";
+
+import * as Dialog from '@radix-ui/react-dialog';
 
 function App() {
   const API = "http://localhost:3000";
@@ -75,7 +76,7 @@ function App() {
           <div className="header">
             <h1
               id="title"
-              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
+              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-2"
             >
               TODO
             </h1>
@@ -83,10 +84,51 @@ function App() {
 
 
             <div className="middle">
-              <div className="checkbox">
-                <button onClick={() => createTodo()}>submit</button>
-              </div>
+              <div className="add">+</div>
+              <div>Add a Todo</div>
             </div>
+
+            
+            <Dialog.Root>
+    <Dialog.Trigger asChild>
+      <button className="Button violet" size="large">
+        Edit profile
+      </button>
+    </Dialog.Trigger>
+    <Dialog.Portal>
+      <Dialog.Overlay className="DialogOverlay" />
+      <Dialog.Content className="DialogContent">
+        <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+        <Dialog.Description className="DialogDescription">
+          Make changes to your profile here. Click save when you're done.
+        </Dialog.Description>
+        <fieldset className="Fieldset">
+          <label className="Label" htmlFor="name">
+            Name
+          </label>
+          <input className="Input" id="name" defaultValue="Pedro Duarte" />
+        </fieldset>
+
+       
+        <div style={{ display: 'flex', marginTop: 25, justifyContent: 'flex-end' }}>
+          <Dialog.Close asChild>
+            <button className="Button green">Save changes</button>
+          </Dialog.Close>
+        </div>
+
+
+        <Dialog.Close asChild>
+          <button className="IconButton" aria-label="Close">
+          </button>
+        </Dialog.Close>
+      </Dialog.Content>
+    </Dialog.Portal>
+  </Dialog.Root>
+
+
+
+
+
           </div>
 
           <div className="todos">
