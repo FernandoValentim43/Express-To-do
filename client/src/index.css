@@ -32,8 +32,8 @@ body {
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(19.5px);
     -webkit-backdrop-filter: blur(19.5px);
-    height: 40rem;
-    min-width: 40rem;
+    height: 35rem;
+    min-width: 35rem;
 
     border-radius: 0.5rem;
 }

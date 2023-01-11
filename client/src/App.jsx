@@ -69,17 +69,13 @@ function App() {
 
           <div className="todos">
             {todos.map((todo) => (
-              <div
-                className={"todo " + (todo.complete ? "complete" : "")}
-                key={todo._id}
-              >
-                <div
-                  className="checkbox"
-                  onClick={() => completeTodo(todo._id)}
-                ></div>
-                <div className="text">{todo.text}</div>
-                <div className="delete-todo">X</div>
-              </div>
+              <Todo
+                text={todo.text}
+                todoComplete={todo.complete}
+                idProp={todo._id}
+                completeTodo={completeTodo}
+                deleteTodo={deleteTodo}
+              />
             ))}
           </div>
         </div>
