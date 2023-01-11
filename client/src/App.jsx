@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
+import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
 
-import * as Dialog from '@radix-ui/react-dialog';
 
 function App() {
   const API = "http://localhost:3000";
@@ -21,22 +21,20 @@ function App() {
     console.log(todos);
   }, []);
 
-
   //create todo
   const createTodo = async () => {
-    const data = await fetch("http://localhost:3000/todo/new" , {
+    const data = await fetch("http://localhost:3000/todo/new", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        text: "banana"
-      })
-    }).then(res => res.json())
+        text: "banana",
+      }),
+    }).then((res) => res.json());
 
-    setTodos([...todos, data])
-  }
-
+    setTodos([...todos, data]);
+  };
 
   //complete the todo
   const completeTodo = async (id) => {
@@ -81,54 +79,13 @@ function App() {
               TODO
             </h1>
 
-
-
             <div className="middle">
               <div className="add">+</div>
               <div>Add a Todo</div>
             </div>
 
-            
-            <Dialog.Root>
-    <Dialog.Trigger asChild>
-      <button className="Button violet" size="large">
-        Edit profile
-      </button>
-    </Dialog.Trigger>
-    <Dialog.Portal>
-      <Dialog.Overlay className="DialogOverlay" />
-      <Dialog.Content className="DialogContent">
-        <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
-        <Dialog.Description className="DialogDescription">
-          Make changes to your profile here. Click save when you're done.
-        </Dialog.Description>
-        <fieldset className="Fieldset">
-          <label className="Label" htmlFor="name">
-            Name
-          </label>
-          <input className="Input" id="name" defaultValue="Pedro Duarte" />
-        </fieldset>
-
-       
-        <div style={{ display: 'flex', marginTop: 25, justifyContent: 'flex-end' }}>
-          <Dialog.Close asChild>
-            <button className="Button green">Save changes</button>
-          </Dialog.Close>
-        </div>
-
-
-        <Dialog.Close asChild>
-          <button className="IconButton" aria-label="Close">
-          </button>
-        </Dialog.Close>
-      </Dialog.Content>
-    </Dialog.Portal>
-  </Dialog.Root>
-
-
-
-
-
+       <DialogRadix/>
+          
           </div>
 
           <div className="todos">
