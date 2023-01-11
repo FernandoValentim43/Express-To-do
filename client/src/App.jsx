@@ -13,11 +13,28 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  //
+  //useEffect
   useEffect(() => {
     getTodos();
     console.log(todos);
   }, []);
+
+
+  //create todo
+  const createTodo = async () => {
+    const data = await fetch("http://localhost:3000/todo/new" , {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        text: "banana"
+      })
+    }).then(res => res.json())
+
+    setTodos([...todos, data]);
+  }
+
 
   //complete the todo
   const completeTodo = async (id) => {
@@ -57,13 +74,15 @@ function App() {
           <div className="header">
             <h1
               id="title"
-              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
+              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
             >
               TODO
             </h1>
 
             <div className="middle">
-              <div className="checkbox"></div>
+              <div className="checkbox">
+                <button onClick={() => createTodo()}>submit</button>
+              </div>
             </div>
           </div>
 
