@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Todo } from "./components/todo";
+import DialogDemo from "./components/Dialog";
 
 function App() {
   const API = "http://localhost:3000";
@@ -32,7 +33,7 @@ function App() {
       })
     }).then(res => res.json())
 
-    setTodos([...todos, data]);
+    setTodos([...todos, data])
   }
 
 
@@ -74,10 +75,12 @@ function App() {
           <div className="header">
             <h1
               id="title"
-              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
+              className="p-4 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
             >
               TODO
             </h1>
+
+
 
             <div className="middle">
               <div className="checkbox">
