@@ -41,6 +41,8 @@ body {
 
 .todo:first-child {
     border-radius: 0.2rem 0.3rem 0 0;
+    border-top: 0px ;
+
 }
 
 .header {
@@ -49,6 +51,8 @@ body {
 
 
 .todo {
+    cursor: context-menu;
+
     transition: 0.3s ease-in-out;
     color: #8da5bd;
     font-weight: 500;
@@ -59,8 +63,7 @@ body {
     padding: 20px;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    border-bottom: 1px solid #3b4f63;
+    border-top: 1px solid #3b4f63;
 }
 
 .middle {
@@ -73,11 +76,10 @@ body {
     padding: 20px;
     display: flex;
     align-items: center;
-    cursor: pointer;
-    border-bottom: 1px solid #3b4f63;
 }
 
 .checkbox {
+    cursor: pointer;
     width: 25px;
     height: 25px;
     margin-right: 16px;
@@ -88,6 +90,8 @@ body {
 
 
 .todo .delete-todo {
+    cursor: pointer;
+
     position: absolute;
     top: 50%;
     right: 16px;
