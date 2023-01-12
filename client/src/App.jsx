@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
+import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
+
 
 function App() {
   const API = "http://localhost:3000";
@@ -19,22 +21,20 @@ function App() {
     console.log(todos);
   }, []);
 
-
   //create todo
   const createTodo = async () => {
-    const data = await fetch("http://localhost:3000/todo/new" , {
+    const data = await fetch("http://localhost:3000/todo/new", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        text: "banana"
-      })
-    }).then(res => res.json())
+        text: "banana",
+      }),
+    }).then((res) => res.json());
 
     setTodos([...todos, data]);
-  }
-
+  };
 
   //complete the todo
   const completeTodo = async (id) => {
@@ -74,21 +74,24 @@ function App() {
           <div className="header">
             <h1
               id="title"
-              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-16"
+              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-2"
             >
               TODO
             </h1>
 
             <div className="middle">
-              <div className="checkbox">
-                <button onClick={() => createTodo()}>submit</button>
-              </div>
+              <div className="add">+</div>
+              <div>Add a Todo</div>
             </div>
+
+       <DialogRadix/>
+          
           </div>
 
           <div className="todos">
             {todos.map((todo) => (
               <Todo
+                key={todo._id}
                 text={todo.text}
                 todoComplete={todo.complete}
                 idProp={todo._id}
