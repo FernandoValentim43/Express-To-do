@@ -79,10 +79,7 @@ function App() {
               TODO
             </h1>
 
-            <div className="middle">
-              <div className="add">+</div>
-              <div>Add a Todo</div>
-            </div>
+           
 
        <DialogRadix/>
           
