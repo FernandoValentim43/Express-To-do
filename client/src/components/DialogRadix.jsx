@@ -1,27 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
-
 export const DialogRadix = () => {
+  const [name, setName] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    alert(`The name you entered was: ${name}`);
+  }
+
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
-        <button className="Button violet" size="large">
+        <button className="Button" size="large">
           Edit profile
         </button>
       </Dialog.Trigger>
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay" />
         <Dialog.Content className="DialogContent">
-          <Dialog.Title className="DialogTitle">Edit profile</Dialog.Title>
+          <Dialog.Title className="DialogTitle">Add A Todo</Dialog.Title>
           <Dialog.Description className="DialogDescription">
-            Make changes to your profile here. Click save when you're done.
+            Type a new Todo then click the button
           </Dialog.Description>
           <fieldset className="Fieldset">
-            <label className="Label" htmlFor="name">
-              Name
-            </label>
-            <input className="Input" id="name" defaultValue="Pedro Duarte" />
+            <form onSubmit={handleSubmit}>
+              <label>
+                Enter your name:
+                <input
+                  type="text"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </label>
+              <input type="submit" />
+            </form>
           </fieldset>
 
           <div
@@ -30,15 +43,13 @@ export const DialogRadix = () => {
               marginTop: 25,
               justifyContent: "flex-end",
             }}
-          >
-            <Dialog.Close asChild>
-              <button className="Button green">Save changes</button>
-            </Dialog.Close>
-          </div>
+          ></div>
 
-          <Dialog.Close asChild>
-            <button className="IconButton" aria-label="Close"></button>
-          </Dialog.Close>
+          {/* <Dialog.Close asChild>
+            <button className="Button" type="submit">
+              Save changes
+            </button>
+          </Dialog.Close> */}
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>

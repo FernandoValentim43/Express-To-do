@@ -4,7 +4,6 @@ export const Todo = (props) => {
   return (
     <div
       className={"todo " + (props.todoComplete ? "complete" : "")}
-      key={props.idProp}
     >
       <div
         className="checkbox"

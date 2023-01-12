@@ -91,6 +91,7 @@ function App() {
           <div className="todos">
             {todos.map((todo) => (
               <Todo
+                key={todo._id}
                 text={todo.text}
                 todoComplete={todo.complete}
                 idProp={todo._id}
