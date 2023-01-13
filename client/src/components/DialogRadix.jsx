@@ -2,6 +2,9 @@ import React from "react";
 import * as Dialog from "@radix-ui/react-dialog";
 
 export const DialogRadix = () => {
+
+
+  
   return (
     <Dialog.Root>
       <Dialog.Trigger asChild>
