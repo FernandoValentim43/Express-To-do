@@ -1,13 +1,11 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
+
 
 function App() {
   const API = "http://localhost:3000";
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState();
-
- 
 
   //fetch the todos from the api
   const getTodos = () => {
@@ -24,14 +22,14 @@ function App() {
   }, []);
 
   //create todo
-  const createTodo = async () => {
+  const createTodo = async (todoValue) => {
     const data = await fetch("http://localhost:3000/todo/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        text: newTodo,
+        text: todoValue,
       }),
     }).then((res) => res.json());
 
@@ -81,7 +79,7 @@ function App() {
               TODO
             </h1>
 
-            <DialogRadix />
+            <DialogRadix  createTodo={createTodo}/>
           </div>
 
           <div className="todos">
@@ -93,12 +91,11 @@ function App() {
                 idProp={todo._id}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
+                
               />
             ))}
           </div>
         </div>
-
-        
       </div>
     </section>
   );
