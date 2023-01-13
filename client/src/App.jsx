@@ -7,12 +7,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState();
 
-  const [name, setName] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(name);
-  };
+ 
 
   //fetch the todos from the api
   const getTodos = () => {
@@ -103,17 +98,7 @@ function App() {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <label>
-            Enter your name:
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-          </label>
-          <button type="submit">AAAAAA</button>
-        </form>
+        
       </div>
     </section>
   );
