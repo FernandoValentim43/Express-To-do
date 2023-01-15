@@ -37,6 +37,7 @@ function App() {
   };
 
   //complete the todo
+  
   const completeTodo = async (id) => {
     const data = await fetch("http://localhost:3000/todo/complete/" + id).then(
       (res) => res.json()
