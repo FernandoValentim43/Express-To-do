@@ -23,13 +23,11 @@ export const DialogRadix = (props) => {
           <Dialog.Overlay className="DialogOverlay" />
           <Dialog.Content className="DialogContent">
             <Dialog.Title className="DialogTitle">Add A Todo</Dialog.Title>
-
             <Dialog.Close asChild>
               <button className="IconButton" aria-label="Close">
                 X
               </button>
             </Dialog.Close>
-
             <fieldset className="Fieldset">
               <form
                 onSubmit={(event) => {
