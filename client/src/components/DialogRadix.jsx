@@ -47,6 +47,8 @@ export const DialogRadix = (props) => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="New Todo"
+
+                   
                   />
                 </label>
               </form>
