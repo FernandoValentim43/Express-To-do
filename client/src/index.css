@@ -216,6 +216,7 @@ form {
     color: black;
     padding: 0.4rem;
     font-size: 15px;
+    margin-bottom: 1.2rem;
 }
 
 @keyframes overlayShow {
