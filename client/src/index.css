@@ -144,6 +144,7 @@ input {
 
 .DialogContent {
     
+    
     background: rgba(8, 51, 94, 0.377);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -169,13 +170,7 @@ input {
 .DialogTitle {
     margin: 0;
     font-weight: 500;
-    font-size: 17px;
-}
-
-.DialogDescription {
-    margin: 10px 0 20px;
-    font-size: 15px;
-    line-height: 1.5;
+    font-size: 25px;
 }
 
 
@@ -193,13 +188,15 @@ input {
     right: 10px;
 }
 
-.Form {
+form {
     display: flex;
     flex-direction: column;
 }
 
 
 .Input {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
     color: black;
     background-color: white;
    height: 2.5rem;
@@ -210,6 +207,14 @@ input {
    
 }
 
+
+.Submit {
+    background-color: gainsboro;
+    border-radius: 4px;
+    color: black;
+    padding: 0.4rem;
+    font-size: 15px;
+}
 
 @keyframes overlayShow {
     from {

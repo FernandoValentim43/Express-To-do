@@ -11,8 +11,8 @@ export const DialogRadix = (props) => {
 
   return (
 
-/*        this is button
- */      <Dialog.Root open={open} onOpenChange={setOpen}>
+
+    <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger asChild>
         <div className="middle">
           <div className="add">+</div>
@@ -20,20 +20,17 @@ export const DialogRadix = (props) => {
         </div>
       </Dialog.Trigger>
 
-      {/*        //this is the dialog
- */}
       <Dialog.Portal>
         <Dialog.Overlay className="DialogOverlay" />
         <Dialog.Content className="DialogContent">
-
           <Dialog.Title className="DialogTitle">Add A Todo</Dialog.Title>
           <Dialog.Close asChild>
-            <button className="IconButton" aria-label="Close" >
+            <button className="IconButton" aria-label="Close">
               X
             </button>
           </Dialog.Close>
 
-          <form className="Form"
+          <form
             onSubmit={(event) => {
               wait().then(() => setOpen(false));
               event.preventDefault();
@@ -41,6 +38,8 @@ export const DialogRadix = (props) => {
               setName("");
             }}
           >
+
+
 
             <input
               className="Input"
@@ -50,12 +49,11 @@ export const DialogRadix = (props) => {
               placeholder="New Todo"
             />
 
-            <button type="submit">Submit</button>
+            <button  className="Submit" type="submit">Submit</button>
 
           </form>
 
         </Dialog.Content>
-
       </Dialog.Portal>
     </Dialog.Root>
 
