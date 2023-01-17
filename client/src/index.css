@@ -209,6 +209,8 @@ form {
 
 
 .Submit {
+    text-align: center;
+    width: 20%;
     background-color: gainsboro;
     border-radius: 4px;
     color: black;
