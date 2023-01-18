@@ -9,6 +9,7 @@ export const DialogRadix = (props) => {
   const [open, setOpen] = React.useState(false);
   const wait = () => new Promise((resolve) => setTimeout(resolve, 100));
 
+
   return (
 
 
@@ -39,8 +40,6 @@ export const DialogRadix = (props) => {
             }}
           >
 
-
-
             <input
               className="Input"
               type="text"
@@ -48,8 +47,8 @@ export const DialogRadix = (props) => {
               onChange={(e) => setName(e.target.value)}
               placeholder="New Todo"
             />
-
-            <button  className="Submit" type="submit">Submit</button>
+            
+            <button  disabled={!name} className="Submit" type="submit">Submit</button>
 
           </form>
 

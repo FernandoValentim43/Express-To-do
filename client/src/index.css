@@ -143,14 +143,14 @@ input {
 }
 
 .DialogContent {
-    
-    
+
+
     background: rgba(8, 51, 94, 0.377);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(19.5px);
     -webkit-backdrop-filter: blur(19.5px);
-    
+
     color: rgba(255, 255, 255, 0.822);
     border-radius: 0.5rem;
     border-radius: 6px;
@@ -199,16 +199,22 @@ form {
     margin-bottom: 1rem;
     color: black;
     background-color: white;
-   height: 2.5rem;
-   width: 25rem;
+    height: 2.5rem;
+    width: 25rem;
     border-radius: 4px;
     padding: 0 10px;
     font-size: 15px;
-   
+
 }
 
 
 .Submit {
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
     text-align: center;
     width: 20%;
     background-color: gainsboro;
