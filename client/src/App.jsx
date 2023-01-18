@@ -23,7 +23,10 @@ function App() {
 
   //create todo
   const createTodo = async (todoValue) => {
-    const data = await fetch("http://localhost:3000/todo/new", {
+    if(todoValue == "") {
+      console.log("error empty todo") 
+    } else {
+      const data = await fetch("http://localhost:3000/todo/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,6 +37,7 @@ function App() {
     }).then((res) => res.json());
 
     setTodos([...todos, data]);
+    }
   };
 
   //complete the todo
