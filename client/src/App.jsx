@@ -4,7 +4,7 @@ import { Todo } from "./components/todo";
 
 
 function App() {
-  const API = "http://localhost:3000";
+  const API = "https://express-todo-api.onrender.com";
   const [todos, setTodos] = useState([]);
 
   //fetch the todos from the api
@@ -26,7 +26,7 @@ function App() {
     if(todoValue == "") {
       console.log("error empty todo") 
     } else {
-      const data = await fetch("http://localhost:3000/todo/new", {
+      const data = await fetch(API + "/todo/new", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -43,7 +43,7 @@ function App() {
   //complete the todo
   
   const completeTodo = async (id) => {
-    const data = await fetch("http://localhost:3000/todo/complete/" + id).then(
+    const data = await fetch(API + "/todo/complete/" + id).then(
       (res) => res.json()
     );
 
@@ -59,7 +59,7 @@ function App() {
 
   //delete the todo
   const deleteTodo = async (id) => {
-    const data = await fetch("http://localhost:3000/todo/delete/" + id, {
+    const data = await fetch(API + "/todo/delete/" + id, {
       method: "DELETE",
     }).then((res) => res.json());
 
