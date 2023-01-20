@@ -27,7 +27,26 @@ app.listen(process.env.PORT, () =>
 );
 
 //get todos from DB
-const Todo = require("./models/Todo");
+const Schema = mongoose.Schema;
+
+const TodoSchema = new Schema({
+    text: {
+        type: String,
+        required: true
+    },
+    complete: {
+        type: Boolean,
+        default: false
+    },
+    timestamp: {
+        type: String,
+        default: Date.now()
+    }
+})
+
+
+const Todo = mongoose.model("Todo", TodoSchema);
+
 app.get("/todos", async (req, res) => {
   const todos = await Todo.find();
 
