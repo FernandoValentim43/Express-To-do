@@ -4,8 +4,19 @@ import { Todo } from "./components/todo";
 
 
 function App() {
+
   const API = "https://express-todo-api.onrender.com";
   const [todos, setTodos] = useState([]);
+
+  
+
+
+  if(localStorage.getItem("firstTime") == null){
+    alert(`The backend of this project is hosted as a free web service at render.com. It is automatically spun down after 15 minutes of inactivity. When a new request comes in, Render spins it up again, and it can take up to ~30 seconds for the intial boot, so you may have to wait a little`);
+    localStorage.setItem("firstTime",true);
+ }
+
+ 
 
   //fetch the todos from the api
   const getTodos = () => {
@@ -23,25 +34,25 @@ function App() {
 
   //create todo
   const createTodo = async (todoValue) => {
-    if(todoValue == "") {
-      console.log("error empty todo") 
+    if (todoValue == "") {
+      console.log("error empty todo")
     } else {
       const data = await fetch(API + "/todo/new", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        text: todoValue,
-      }),
-    }).then((res) => res.json());
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text: todoValue,
+        }),
+      }).then((res) => res.json());
 
-    setTodos([...todos, data]);
+      setTodos([...todos, data]);
     }
   };
 
   //complete the todo
-  
+
   const completeTodo = async (id) => {
     const data = await fetch(API + "/todo/complete/" + id).then(
       (res) => res.json()
@@ -68,6 +79,7 @@ function App() {
 
   return (
     <section
+
       id="background-image"
       className="bg-cover w-screen h-56 bg-no-repeat bg-[url('/index.png')] "
     >
@@ -84,7 +96,7 @@ function App() {
               TODO
             </h1>
 
-            <DialogRadix  createTodo={createTodo}/>
+            <DialogRadix createTodo={createTodo} />
           </div>
 
           <div className="todos">
@@ -96,7 +108,7 @@ function App() {
                 idProp={todo._id}
                 completeTodo={completeTodo}
                 deleteTodo={deleteTodo}
-                
+
               />
             ))}
           </div>
