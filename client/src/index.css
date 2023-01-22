@@ -205,6 +205,8 @@ form {
     padding: 0 10px;
     font-size: 15px;
 
+
+
 }
 
 
@@ -245,4 +247,31 @@ form {
         opacity: 1;
         transform: translate(-50%, -50%) scale(1);
     }
+}
+
+
+.form-field {
+    position: relative;
+    display: inline-block;
+}
+
+.icon {
+    padding-right: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+}
+
+
+
+
+.form-field input {
+    background-color: white;
+    height: 2.5rem;
+    width: 25rem;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 15px;
+
 }

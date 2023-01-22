@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
+import { EmojiPicker } from "./components/EmojiPicker"
+
 
 
 function App() {
@@ -9,8 +11,6 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   
-
-
   if(localStorage.getItem("firstTime") == null){
     alert(`The backend of this project is hosted as a free web service at render.com. It is automatically spun down after 15 minutes of inactivity. When a new request comes in, Render spins it up again, and it can take up to ~30 seconds for the intial boot, so you may have to wait a little`);
     localStorage.setItem("firstTime",true);
@@ -98,6 +98,12 @@ function App() {
 
             <DialogRadix createTodo={createTodo} />
           </div>
+
+          
+          
+          <EmojiPicker/>
+
+         
 
           <div className="todos">
             {todos.map((todo) => (

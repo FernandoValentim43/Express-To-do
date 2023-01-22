@@ -1,6 +1,9 @@
 import React from "react";
 import { useState } from "react";
 
+
+
+
 import * as Dialog from "@radix-ui/react-dialog";
 
 
@@ -41,12 +44,14 @@ export const DialogRadix = (props) => {
           >
 
             <input
+
               className="Input"
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="New Todo"
             />
+          
             
             <button  disabled={!name} className="Submit" type="submit">Submit</button>
 
