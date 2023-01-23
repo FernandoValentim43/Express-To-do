@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from "react";
 import { DialogRadix } from "./components/DialogRadix";
-import { Todo } from "./components/todo";
+import { Todo } from "./components/Todo";
 
 export const TextContext = createContext()
 
