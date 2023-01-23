@@ -21,8 +21,7 @@ const DropdownMenuRadix = (props) => {
 
             <DropdownMenu.Portal>
                 <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
-                    <button onClick={() => console.log(props.text)}>A</button>
-                 <Picker searchPosition={"none"} skinTonePosition={"none"} previewPosition={"none"} data={data} categories={["objects", "activity", "foods", "nature", "people"]} perLine={12} onEmojiSelect={ e => handleEmoji(e.native)} />
+                 <Picker skinTonePosition={"none"} previewPosition={"none"} data={data} categories={["objects", "activity", "foods", "nature", "people"]} perLine={12} onEmojiSelect={ e => handleEmoji(e.native)} />
                 </DropdownMenu.Content>
             </DropdownMenu.Portal>
         </DropdownMenu.Root>
