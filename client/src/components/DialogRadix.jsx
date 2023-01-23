@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-
+import DropdownMenuRadix from "./DropDownRadix";
 
 
 
@@ -43,17 +43,24 @@ export const DialogRadix = (props) => {
             }}
           >
 
-            <input
+            <div className="form-field">
+              <input
 
-              className="Input"
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="New Todo"
-            />
-          
-            
-            <button  disabled={!name} className="Submit" type="submit">Submit</button>
+                className="Input"
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="New Todo"
+              />
+
+              <span className="icon"><DropdownMenuRadix/></span>
+
+            </div>
+
+
+
+
+            <button disabled={!name} className="Submit" type="submit">Submit</button>
 
           </form>
 

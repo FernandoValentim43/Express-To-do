@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
-import { EmojiPicker } from "./components/EmojiPicker"
 
 
 
@@ -101,7 +100,6 @@ function App() {
 
           
           
-          <EmojiPicker/>
 
          
 
