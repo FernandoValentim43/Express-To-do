@@ -129,12 +129,7 @@ body {
 }
 
 
-/* reset */
-button,
-fieldset,
-input {
-    all: unset;
-}
+
 
 .DialogOverlay {
     backdrop-filter: blur(1.2rem);
@@ -143,8 +138,6 @@ input {
 }
 
 .DialogContent {
-
-
     background: rgba(8, 51, 94, 0.377);
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -194,9 +187,9 @@ form {
 }
 
 
-/* .Input {
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
+
+
+.form-field input {
     color: black;
     background-color: white;
     height: 2.5rem;
@@ -205,9 +198,7 @@ form {
     padding: 0 10px;
     font-size: 15px;
 
-
-
-} */
+}
 
 
 .Submit {
@@ -266,15 +257,6 @@ form {
 
 
 
-.form-field input {
-    background-color: white;
-    height: 2.5rem;
-    width: 25rem;
-    border-radius: 4px;
-    padding: 0 10px;
-    font-size: 15px;
-
-}
 
 
 
@@ -339,3 +321,22 @@ form {
         transform: translateX(0);
     }
 }
+
+em-emoji-picker {
+    --background-rgb: 85, 170, 255;
+    --border-radius: 24px;
+    --category-icon-size: 24px;
+    --color-border-over: rgba(0, 0, 0, 0.1);
+    --color-border: rgba(0, 0, 0, 0.05);
+    --font-size: 20px;
+    --rgb-accent: 255, 105, 180;
+    --rgb-background: 262, 240, 283;
+    --rgb-color: 102, 51, 153;
+    --rgb-input: 255, 235, 235;
+    --shadow: 5px 5px 15px -8px rebeccapurple;
+
+    height: 270px;
+    
+  }
+
+  

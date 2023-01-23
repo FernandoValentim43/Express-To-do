@@ -6,7 +6,11 @@ import Picker from '@emoji-mart/react'
 
 import '../../src/index.css';
 
-const DropdownMenuRadix = () => {
+const DropdownMenuRadix = (props) => {
+    const handleEmoji = (emoji) => {
+        const actualText = props.text
+        props.setText(actualText + emoji)
+    }
    
 
     return (
@@ -17,7 +21,8 @@ const DropdownMenuRadix = () => {
 
             <DropdownMenu.Portal>
                 <DropdownMenu.Content className="DropdownMenuContent" sideOffset={5}>
-                    <Picker data={data} categories={["objects", "activity", "foods", "nature", "people"]} perLine={8} onEmojiSelect={e => setEmoji(e.native)} />
+                    <button onClick={() => console.log(props.text)}>A</button>
+                 <Picker searchPosition={"none"} skinTonePosition={"none"} previewPosition={"none"} data={data} categories={["objects", "activity", "foods", "nature", "people"]} perLine={12} onEmojiSelect={ e => handleEmoji(e.native)} />
                 </DropdownMenu.Content>
             </DropdownMenu.Portal>
         </DropdownMenu.Root>

@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { TextContext } from "../App";
 import DropdownMenuRadix from "./DropDownRadix";
 
 
@@ -11,6 +12,9 @@ export const DialogRadix = (props) => {
   const [name, setName] = useState("");
   const [open, setOpen] = React.useState(false);
   const wait = () => new Promise((resolve) => setTimeout(resolve, 100));
+
+  const [text, setText] = useContext(TextContext);
+
 
 
   return (
@@ -38,29 +42,28 @@ export const DialogRadix = (props) => {
             onSubmit={(event) => {
               wait().then(() => setOpen(false));
               event.preventDefault();
-              props.createTodo(name)
-              setName("");
+              props.createTodo(text)
+              setText("");
             }}
           >
 
             <div className="form-field">
               <input
-
                 className="Input"
                 type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+                value={text}
+                onChange={(e) => setText(e.target.value)}
                 placeholder="New Todo"
               />
 
-              <span className="icon"><DropdownMenuRadix/></span>
+              <span className="icon"><DropdownMenuRadix text={text} setText={setText} /></span>
 
             </div>
 
 
 
 
-            <button disabled={!name} className="Submit" type="submit">Submit</button>
+            <button disabled={!text} className="Submit" type="submit">Submit</button>
 
           </form>
 

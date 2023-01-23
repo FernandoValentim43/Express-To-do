@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, createContext } from "react";
 import { DialogRadix } from "./components/DialogRadix";
 import { Todo } from "./components/todo";
 
+export const TextContext = createContext()
 
 
 function App() {
@@ -9,13 +10,16 @@ function App() {
   const API = "https://express-todo-api.onrender.com";
   const [todos, setTodos] = useState([]);
 
-  
-  if(localStorage.getItem("firstTime") == null){
-    alert(`The backend of this project is hosted as a free web service at render.com. It is automatically spun down after 15 minutes of inactivity. When a new request comes in, Render spins it up again, and it can take up to ~30 seconds for the intial boot, so you may have to wait a little`);
-    localStorage.setItem("firstTime",true);
- }
+  const [text, setText] = useState("");
 
- 
+
+
+  if (localStorage.getItem("firstTime") == null) {
+    alert(`The backend of this project is hosted as a free web service at render.com. It is automatically spun down after 15 minutes of inactivity. When a new request comes in, Render spins it up again, and it can take up to ~30 seconds for the intial boot, so you may have to wait a little`);
+    localStorage.setItem("firstTime", true);
+  }
+
+
 
   //fetch the todos from the api
   const getTodos = () => {
@@ -77,48 +81,50 @@ function App() {
   };
 
   return (
-    <section
+    <TextContext.Provider value={[text , setText]}>
+      <section
 
-      id="background-image"
-      className="bg-cover w-screen h-56 bg-no-repeat bg-[url('/index.png')] "
-    >
-      <div
-        id="main-container"
-        className="justify-center items-center flex h-screen w-screen"
+        id="background-image"
+        className="bg-cover w-screen h-56 bg-no-repeat bg-[url('/index.png')] "
       >
-        <div id="main">
-          <div className="header">
-            <h1
-              id="title"
-              className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-2"
-            >
-              TODO
-            </h1>
 
-            <DialogRadix createTodo={createTodo} />
+
+        <div
+          id="main-container"
+          className="justify-center items-center flex h-screen w-screen"
+        >
+          <div id="main">
+            <div className="header">
+
+              <h1
+                id="title"
+                className="p-8 text-white text-5xl tracking-[0.8rem] font-medium mb-2"
+              >
+                TODO
+              </h1>
+
+              <DialogRadix createTodo={createTodo} />
+            </div>
+
+            <div className="todos">
+              {todos.map((todo) => (
+                <Todo
+                  key={todo._id}
+                  text={todo.text}
+                  todoComplete={todo.complete}
+                  idProp={todo._id}
+                  completeTodo={completeTodo}
+                  deleteTodo={deleteTodo}
+
+                />
+              ))}
+            </div>
           </div>
 
-          
-          
-
-         
-
-          <div className="todos">
-            {todos.map((todo) => (
-              <Todo
-                key={todo._id}
-                text={todo.text}
-                todoComplete={todo.complete}
-                idProp={todo._id}
-                completeTodo={completeTodo}
-                deleteTodo={deleteTodo}
-
-              />
-            ))}
-          </div>
         </div>
-      </div>
-    </section>
+
+      </section>
+    </TextContext.Provider>
   );
 }
 export default App;
